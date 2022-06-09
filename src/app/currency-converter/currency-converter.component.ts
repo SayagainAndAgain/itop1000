@@ -39,7 +39,6 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   public onCurrencyChange() {
-    console.log('this.currencyPair', this.currencyPair);
     this.getRates();
   }
 }

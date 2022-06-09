@@ -9,9 +9,9 @@ export class CurrencyService {
   headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     'X-RapidAPI-Key': environment.API_KEY,
-    'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com',
+    'X-RapidAPI-Host': environment.API_HOST,
   });
-  currencyUrl = 'https://currency-exchange.p.rapidapi.com/exchange';
+  currencyUrl = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
