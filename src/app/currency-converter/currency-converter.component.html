@@ -1,0 +1,33 @@
+<div class="card">
+  1 {{ currencyPair[0] }} equals {{ rate.toFixed(2) }}
+  {{ currencyPair[1] }}
+</div>
+<div>
+  <div class="card highlight-card">
+    <input
+      type="number"
+      min="0"
+      [(ngModel)]="cur1"
+      (input)="onValueChange()"
+      autofocus
+    />
+    <select [(ngModel)]="currencyPair[0]" (change)="onCurrencyChange()">
+      <option *ngFor="let currency of currencies" [ngValue]="currency.value">
+        {{ currency.name }}
+      </option>
+    </select>
+  </div>
+  <div class="card highlight-card">
+    <input
+      type="number"
+      min="0"
+      [(ngModel)]="cur2"
+      (input)="onValue2Change()"
+    />
+    <select [(ngModel)]="currencyPair[1]" (change)="onCurrencyChange()">
+      <option *ngFor="let currency of currencies" [ngValue]="currency.value">
+        {{ currency.name }}
+      </option>
+    </select>
+  </div>
+</div>
