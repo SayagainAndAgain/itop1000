@@ -24,8 +24,8 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   getRates(): void {
-    this.currencyService.getRates(this.currencyPair).subscribe((resp) => {
-      this.rate = Number(resp);
+    this.currencyService.getRates(this.currencyPair).subscribe((resp: any) => {
+      this.rate = Number(resp.conversion_rate);
       this.onValueChange();
     });
   }

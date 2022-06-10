@@ -2,7 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
-API_KEY should be filled in environment.ts file.
+<YOUR-API-KEY> should be filled in environment.ts file.
+
+## Demo
+
+Demo is here: [https://itop1000-currency.herokuapp.com/](https://itop1000-currency.herokuapp.com/).
 
 ## Development server
 

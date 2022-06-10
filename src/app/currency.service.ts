@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrencyService {
-  headers: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'X-RapidAPI-Key': environment.API_KEY,
-    'X-RapidAPI-Host': environment.API_HOST,
-  });
   currencyUrl = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error.error);
+    return throwError(() => new Error('Something went wrong.'));
+  }
+
   getRates(currencyPair: string[]) {
-    return this.http.get(
-      `${this.currencyUrl}?from=${currencyPair[0]}&to=${currencyPair[1]}`,
-      {
-        headers: this.headers,
-      }
-    );
+    return this.http
+      .get(`${this.currencyUrl}${currencyPair[0]}/${currencyPair[1]}`)
+      .pipe(catchError(this.handleError));
   }
 }

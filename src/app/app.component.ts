@@ -19,9 +19,13 @@ export class AppComponent implements OnInit {
   getRates(): void {
     this.currencyService
       .getRates(['USD', 'UAH'])
-      .subscribe((resp) => (this.usdRate = Number(resp).toFixed(2)));
+      .subscribe(
+        (resp: any) => (this.usdRate = Number(resp.conversion_rate).toFixed(2))
+      );
     this.currencyService
       .getRates(['EUR', 'UAH'])
-      .subscribe((resp) => (this.eurRate = Number(resp).toFixed(2)));
+      .subscribe(
+        (resp: any) => (this.eurRate = Number(resp.conversion_rate).toFixed(2))
+      );
   }
 }

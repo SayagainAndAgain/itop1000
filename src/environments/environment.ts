@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  API_KEY: '',
-  API_URL: 'https://currency-exchange.p.rapidapi.com/exchange',
-  API_HOST: 'currency-exchange.p.rapidapi.com'
+  API_URL: 'https://v6.exchangerate-api.com/v6/<YOUR-API-KEY>/pair/',
 };
 
 /*
