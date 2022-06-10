@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
-<YOUR-API-KEY> should be filled in environment.ts file.
+`<YOUR-API-KEY>` should be filled in environment.ts file.
 
 ## Demo
 
